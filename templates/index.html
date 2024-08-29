@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Imágenes de Frutas</title>
+</head>
+<body>
+    <h1>Generador de Imágenes de Frutas</h1>
+    <input type="text" id="fruit-name" placeholder="Ingresa el nombre de la fruta">
+    <button onclick="generateImage()">Generar Imagen</button>
+    <br>
+    <img id="fruit-image" src="" alt="Imagen generada">
+
+    <script>
+        function generateImage() {
+            const fruitName = document.getElementById('fruit-name').value;
+            fetch(`/generate_image?name=${fruitName}`)
+                .then(response => response.blob())
+                .then(imageBlob => {
+                    const imageUrl = URL.createObjectURL(imageBlob);
+                    document.getElementById('fruit-image').src = imageUrl;
+                });
+        }
+    </script>
+</body>
+</html>
