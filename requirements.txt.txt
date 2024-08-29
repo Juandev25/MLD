@@ -1,3 +1,0 @@
-Flask==2.1.1
-tensorflow==2.6.0
-pillow==8.4.0
