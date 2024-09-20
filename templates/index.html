@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>¡Juega Tres en Raya!</h1>
+
+    <!-- Mostrar el modo de juego seleccionado -->
+    <div id="modo-seleccionado">
+        Modo actual: <span id="modo-texto">Fácil</span>
+    </div>
+
+    <!-- Selector de modo de juego -->
+    <div id="selector-modo">
+        <label>
+            <input type="radio" name="modo" value="facil" checked> Fácil
+        </label>
+        <label>
+            <input type="radio" name="modo" value="dificil"> Difícil
+        </label>
+    </div>
+
+    <div id="tablero">
+        <div class="celda" id="0"></div>
+        <div class="celda" id="1"></div>
+        <div class="celda" id="2"></div>
+        <div class="celda" id="3"></div>
+        <div class="celda" id="4"></div>
+        <div class="celda" id="5"></div>
+        <div class="celda" id="6"></div>
+        <div class="celda" id="7"></div>
+        <div class="celda" id="8"></div>
+    </div>
+
+    <button id="reiniciar">Reiniciar Juego</button>
+
+    <div id="mensaje-final" class="oculto">
+        <span id="mensaje-texto"></span>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+
